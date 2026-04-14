@@ -347,42 +347,71 @@ h3{font-size:1rem;font-weight:700;color:var(--bd);}
 <div class="st"><div class="st-n">3</div><div class="st-l">Foundational &amp; Service Platforms<br/><span style="font-size:.62rem;">DSP · OneSAP · UWMS</span><br/><span style="font-size:.6rem;color:#0D9488;font-weight:600;">Each touches every initiative end-to-end</span></div></div>
 <div class="st"><div class="st-n" style="font-size:1.1rem;">2026–27</div><div class="st-l">Multi-year delivery window with overlapping go-lives</div></div>
 </div>
-<div class="acc" style="margin-top:18px;">
-<div class="acc-item" style="border-color:rgba(220,38,38,.3);">
-<div class="acc-hd" onclick="toggleAcc(this)" style="border-left:4px solid #DC2626;">
-<span class="acc-ico">🔴</span>
-<span class="acc-title" style="color:#DC2626;">Without COE — Fragmented Quality</span>
-<span class="acc-arr">▼</span>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;align-items:start;">
+
+<!-- WITHOUT COE -->
+<div style="border-radius:14px;border:2px solid rgba(220,38,38,.28);overflow:hidden;background:#fff;box-shadow:0 2px 12px rgba(220,38,38,.06);">
+  <!-- Header — always visible, clickable -->
+  <div onclick="toggleSide('wo-coe')" style="display:flex;align-items:center;gap:10px;padding:14px 16px;cursor:pointer;background:rgba(220,38,38,.04);border-left:4px solid #DC2626;user-select:none;transition:background .15s;" onmouseover="this.style.background='rgba(220,38,38,.09)'" onmouseout="this.style.background='rgba(220,38,38,.04)'">
+    <span style="font-size:1.1rem;">🔴</span>
+    <span style="font-size:.88rem;font-weight:700;color:#DC2626;flex:1;">Without COE — Fragmented Quality</span>
+    <span id="wo-coe-arr" style="font-size:.68rem;color:#DC2626;background:rgba(220,38,38,.1);padding:3px 7px;border-radius:7px;transition:transform .3s;">▼</span>
+  </div>
+  <!-- Body — collapsible -->
+  <div id="wo-coe" style="max-height:0;overflow:hidden;transition:max-height .42s cubic-bezier(.4,0,.2,1);">
+    <div style="padding:10px 16px 14px 20px;">
+      <ul style="padding-left:0;margin:0;display:flex;flex-direction:column;gap:6px;">
+        <li style="list-style:none;font-size:.79rem;color:var(--mu);line-height:1.6;display:flex;align-items:flex-start;gap:7px;"><span style="color:#DC2626;font-weight:700;flex-shrink:0;">✗</span>Each project tests in isolation — no cross-initiative quality view</li>
+        <li style="list-style:none;font-size:.79rem;color:var(--mu);line-height:1.6;display:flex;align-items:flex-start;gap:7px;"><span style="color:#DC2626;font-weight:700;flex-shrink:0;">✗</span>Integration gaps tend to surface in UAT or production</li>
+        <li style="list-style:none;font-size:.79rem;color:var(--mu);line-height:1.6;display:flex;align-items:flex-start;gap:7px;"><span style="color:#DC2626;font-weight:700;flex-shrink:0;">✗</span>Environment conflicts can cause significant SIT delays</li>
+        <li style="list-style:none;font-size:.79rem;color:var(--mu);line-height:1.6;display:flex;align-items:flex-start;gap:7px;"><span style="color:#DC2626;font-weight:700;flex-shrink:0;">✗</span>No shared defect standard — P1 means different things to every vendor</li>
+        <li style="list-style:none;font-size:.79rem;color:var(--mu);line-height:1.6;display:flex;align-items:flex-start;gap:7px;"><span style="color:#DC2626;font-weight:700;flex-shrink:0;">✗</span>Go-live decided by project PM under delivery pressure</li>
+        <li style="list-style:none;font-size:.79rem;color:var(--mu);line-height:1.6;display:flex;align-items:flex-start;gap:7px;"><span style="color:#DC2626;font-weight:700;flex-shrink:0;">✗</span>Programme leadership has no consolidated quality view</li>
+        <li style="list-style:none;font-size:.79rem;color:var(--mu);line-height:1.6;display:flex;align-items:flex-start;gap:7px;"><span style="color:#DC2626;font-weight:700;flex-shrink:0;">✗</span>No golden test scenario library — each vendor defines its own "critical" test cases with no cross-initiative consistency or business sign-off</li>
+      </ul>
+    </div>
+  </div>
 </div>
-<div class="acc-body"><div class="acc-inner">
-<ul>
-<li>Each project tests in isolation</li>
-<li>Integration gaps tend to surface in UAT or production</li>
-<li>Environment conflicts can cause significant SIT delays</li>
-<li>No shared defect standard — P1 means different things to every vendor</li>
-<li>Go-live decided by project PM under delivery pressure</li>
-<li>Programme leadership has no consolidated quality view</li>
-</ul>
-</div></div>
+
+<!-- WITH COE -->
+<div style="border-radius:14px;border:2px solid rgba(13,148,136,.28);overflow:hidden;background:#fff;box-shadow:0 2px 12px rgba(13,148,136,.06);">
+  <!-- Header -->
+  <div onclick="toggleSide('w-coe')" style="display:flex;align-items:center;gap:10px;padding:14px 16px;cursor:pointer;background:rgba(13,148,136,.04);border-left:4px solid #0D9488;user-select:none;transition:background .15s;" onmouseover="this.style.background='rgba(13,148,136,.09)'" onmouseout="this.style.background='rgba(13,148,136,.04)'">
+    <span style="font-size:1.1rem;">🟢</span>
+    <span style="font-size:.88rem;font-weight:700;color:#0D6B64;flex:1;">With COE — Governed Quality</span>
+    <span id="w-coe-arr" style="font-size:.68rem;color:#0D9488;background:rgba(13,148,136,.1);padding:3px 7px;border-radius:7px;transition:transform .3s;">▼</span>
+  </div>
+  <!-- Body -->
+  <div id="w-coe" style="max-height:0;overflow:hidden;transition:max-height .42s cubic-bezier(.4,0,.2,1);">
+    <div style="padding:10px 16px 14px 20px;">
+      <ul style="padding-left:0;margin:0;display:flex;flex-direction:column;gap:6px;">
+        <li style="list-style:none;font-size:.79rem;color:var(--mu);line-height:1.6;display:flex;align-items:flex-start;gap:7px;"><span style="color:#0D9488;font-weight:700;flex-shrink:0;">✓</span>One quality governance model across all 9 initiatives</li>
+        <li style="list-style:none;font-size:.79rem;color:var(--mu);line-height:1.6;display:flex;align-items:flex-start;gap:7px;"><span style="color:#0D9488;font-weight:700;flex-shrink:0;">✓</span>Integration testing governed and facilitated by COE</li>
+        <li style="list-style:none;font-size:.79rem;color:var(--mu);line-height:1.6;display:flex;align-items:flex-start;gap:7px;"><span style="color:#0D9488;font-weight:700;flex-shrink:0;">✓</span>COE defines environment policy to help avoid conflicts</li>
+        <li style="list-style:none;font-size:.79rem;color:var(--mu);line-height:1.6;display:flex;align-items:flex-start;gap:7px;"><span style="color:#0D9488;font-weight:700;flex-shrink:0;">✓</span>Programme-wide defect SLA: P1 targeted at 4 hrs (illustrative)</li>
+        <li style="list-style:none;font-size:.79rem;color:var(--mu);line-height:1.6;display:flex;align-items:flex-start;gap:7px;"><span style="color:#0D9488;font-weight:700;flex-shrink:0;">✓</span>COE and programme leadership provide independent quality endorsement</li>
+        <li style="list-style:none;font-size:.79rem;color:var(--mu);line-height:1.6;display:flex;align-items:flex-start;gap:7px;"><span style="color:#0D9488;font-weight:700;flex-shrink:0;">✓</span>Quality dashboard shared with programme leadership regularly</li>
+        <li style="list-style:none;font-size:.79rem;color:var(--mu);line-height:1.6;display:flex;align-items:flex-start;gap:7px;"><span style="color:#0D9488;font-weight:700;flex-shrink:0;">✓</span>COE-curated golden test scenario library — V-model defined, business-approved, version-controlled; every release expected to pass its applicable golden set before go-live</li>
+      </ul>
+    </div>
+  </div>
 </div>
-<div class="acc-item" style="border-color:rgba(13,148,136,.3);">
-<div class="acc-hd" onclick="toggleAcc(this)" style="border-left:4px solid #0D9488;">
-<span class="acc-ico">🟢</span>
-<span class="acc-title" style="color:#0D6B64;">With COE — Governed Quality</span>
-<span class="acc-arr">▼</span>
+
 </div>
-<div class="acc-body"><div class="acc-inner">
-<ul>
-<li>One quality governance model across all 9 initiatives</li>
-<li>Integration testing governed and facilitated by COE</li>
-<li>COE defines environment policy to help avoid conflicts</li>
-<li>Programme-wide defect SLA: P1 targeted at 4 hrs (illustrative)</li>
-<li>COE and programme leadership provide independent quality endorsement</li>
-<li>Quality dashboard shared with programme leadership regularly</li>
-</ul>
-</div></div>
-</div>
-</div>
+<script>
+function toggleSide(id) {
+  var body = document.getElementById(id);
+  var arr  = document.getElementById(id + '-arr');
+  var isOpen = body.style.maxHeight && body.style.maxHeight !== '0px';
+  if (isOpen) {
+    body.style.maxHeight = '0';
+    if (arr) arr.style.transform = 'rotate(0deg)';
+  } else {
+    body.style.maxHeight = body.scrollHeight + 'px';
+    if (arr) arr.style.transform = 'rotate(180deg)';
+  }
+}
+</script>
 <div class="na">
 <a class="btn" href="#s1">← Cover</a>
 <a class="btn btnp" href="#northstar">See the North Star →</a>
@@ -434,15 +463,12 @@ h3{font-size:1rem;font-weight:700;color:var(--bd);}
       display:flex;align-items:center;justify-content:stretch;
       width:100%;margin-bottom:4px;padding:0 10px;box-sizing:border-box;
   ">
-<!-- left label -->
 <div style="min-width:90px;"></div>
-<!-- truss beam -->
 <div style="flex:1;height:6px;
         background:repeating-linear-gradient(90deg,#1e3a5f 0px,#1e3a5f 30px,#0f2040 30px,#0f2040 34px);
         border-radius:3px;border:1px solid #1454B8;
         box-shadow:0 0 8px rgba(20,84,184,0.4);
     "></div>
-<!-- right label -->
 <div style="min-width:80px;"></div>
 </div>
 <!-- ── FACTORY ROW: input · 8 stations · output ── -->
@@ -459,7 +485,6 @@ h3{font-size:1rem;font-weight:700;color:var(--bd);}
 <div style="font-size:28px;line-height:1;">🏢</div>
 <div style="font-size:10px;color:#7dd3fc;font-weight:700;text-align:center;letter-spacing:0.5px;">QUALITY<br/>REQ'S IN</div>
 <div style="font-size:20px;">📋</div>
-<!-- animated arrow -->
 <div style="
           position:absolute;right:-18px;top:50%;transform:translateY(-50%);
           width:20px;height:20px;z-index:10;
@@ -478,23 +503,21 @@ h3{font-size:1rem;font-weight:700;color:var(--bd);}
 <div style="flex:1;display:flex;flex-direction:column;position:relative;">
 <!-- hanging lamps row -->
 <div style="display:flex;justify-content:space-around;padding:0 2px;margin-bottom:2px;">
-<div style="font-size:16px;opacity:0.7;" title="Station 1">💡</div>
-<div style="font-size:16px;opacity:0.7;" title="Station 2">💡</div>
-<div style="font-size:16px;opacity:0.7;" title="Station 3">💡</div>
-<div style="font-size:16px;opacity:0.7;" title="Station 4">💡</div>
-<div style="font-size:16px;opacity:0.7;" title="Station 5">💡</div>
-<div style="font-size:16px;opacity:0.7;" title="Station 6">💡</div>
-<div style="font-size:16px;opacity:0.7;" title="Station 7">💡</div>
-<div style="font-size:16px;opacity:0.7;" title="Station 8">💡</div>
+<div style="font-size:16px;opacity:0.7;">💡</div>
+<div style="font-size:16px;opacity:0.7;">💡</div>
+<div style="font-size:16px;opacity:0.7;">💡</div>
+<div style="font-size:16px;opacity:0.7;">💡</div>
+<div style="font-size:16px;opacity:0.7;">💡</div>
+<div style="font-size:16px;opacity:0.7;">💡</div>
+<div style="font-size:16px;opacity:0.7;">💡</div>
+<div style="font-size:16px;opacity:0.7;">💡</div>
 </div>
 <!-- STATIONS ROW -->
 <div style="display:flex;gap:5px;padding:0 4px;">
-<!-- ─── PILLAR STATION TEMPLATE ─── -->
 <!-- P1 -->
 <div class="factory-station" style="flex:1;min-width:0;">
-<div class="flip-card">
+<div class="flip-card" id="fc-p1">
 <div class="flip-inner">
-<!-- FRONT -->
 <div class="flip-front" style="background:linear-gradient(160deg,#0d3460,#1454B8);">
 <div class="pillar-num">P1</div>
 <div class="pillar-icon">🏛</div>
@@ -502,7 +525,6 @@ h3{font-size:1rem;font-weight:700;color:var(--bd);}
 <div class="pillar-desc">Signed COE Charter. Unified quality decisions across all 9 initiatives.</div>
 <div class="flip-hint">hover ↺</div>
 </div>
-<!-- BACK -->
 <div class="flip-back" style="background:linear-gradient(160deg,#064e3b,#0d9488);">
 <div class="back-title">🎯 North Star</div>
 <div class="back-text">A signed COE Charter. Weekly QA Council live from Day 1. Every go-live requires COE quality endorsement and programme sign-off.</div>
@@ -513,7 +535,7 @@ h3{font-size:1rem;font-weight:700;color:var(--bd);}
 </div>
 <!-- P2 -->
 <div class="factory-station" style="flex:1;min-width:0;">
-<div class="flip-card">
+<div class="flip-card" id="fc-p2">
 <div class="flip-inner">
 <div class="flip-front" style="background:linear-gradient(160deg,#0d3460,#1454B8);">
 <div class="pillar-num">P2</div>
@@ -532,7 +554,7 @@ h3{font-size:1rem;font-weight:700;color:var(--bd);}
 </div>
 <!-- P3 -->
 <div class="factory-station" style="flex:1;min-width:0;">
-<div class="flip-card">
+<div class="flip-card" id="fc-p3">
 <div class="flip-inner">
 <div class="flip-front" style="background:linear-gradient(160deg,#0d3460,#1454B8);">
 <div class="pillar-num">P3</div>
@@ -551,7 +573,7 @@ h3{font-size:1rem;font-weight:700;color:var(--bd);}
 </div>
 <!-- P4 -->
 <div class="factory-station" style="flex:1;min-width:0;">
-<div class="flip-card">
+<div class="flip-card" id="fc-p4">
 <div class="flip-inner">
 <div class="flip-front" style="background:linear-gradient(160deg,#0d3460,#1454B8);">
 <div class="pillar-num">P4</div>
@@ -570,7 +592,7 @@ h3{font-size:1rem;font-weight:700;color:var(--bd);}
 </div>
 <!-- P5 -->
 <div class="factory-station" style="flex:1;min-width:0;">
-<div class="flip-card">
+<div class="flip-card" id="fc-p5">
 <div class="flip-inner">
 <div class="flip-front" style="background:linear-gradient(160deg,#0d3460,#1454B8);">
 <div class="pillar-num">P5</div>
@@ -589,7 +611,7 @@ h3{font-size:1rem;font-weight:700;color:var(--bd);}
 </div>
 <!-- P6 -->
 <div class="factory-station" style="flex:1;min-width:0;">
-<div class="flip-card">
+<div class="flip-card" id="fc-p6">
 <div class="flip-inner">
 <div class="flip-front" style="background:linear-gradient(160deg,#0d3460,#1454B8);">
 <div class="pillar-num">P6</div>
@@ -608,7 +630,7 @@ h3{font-size:1rem;font-weight:700;color:var(--bd);}
 </div>
 <!-- P7 -->
 <div class="factory-station" style="flex:1;min-width:0;">
-<div class="flip-card">
+<div class="flip-card" id="fc-p7">
 <div class="flip-inner">
 <div class="flip-front" style="background:linear-gradient(160deg,#0d3460,#1454B8);">
 <div class="pillar-num">P7</div>
@@ -627,7 +649,7 @@ h3{font-size:1rem;font-weight:700;color:var(--bd);}
 </div>
 <!-- P8 -->
 <div class="factory-station" style="flex:1;min-width:0;">
-<div class="flip-card">
+<div class="flip-card" id="fc-p8">
 <div class="flip-inner">
 <div class="flip-front" style="background:linear-gradient(160deg,#0d3460,#1454B8);">
 <div class="pillar-num">P8</div>
@@ -662,7 +684,6 @@ h3{font-size:1rem;font-weight:700;color:var(--bd);}
           position:relative;
           box-shadow:0 4px 12px rgba(20,84,184,0.5);
       ">
-<!-- belt rollers -->
 <div style="
             position:absolute;top:50%;left:0;right:0;
             display:flex;justify-content:space-between;
@@ -686,7 +707,6 @@ h3{font-size:1rem;font-weight:700;color:var(--bd);}
         padding:10px 5px;gap:5px;position:relative;
         box-shadow:0 0 20px rgba(16,185,129,0.3),inset 0 0 20px rgba(4,120,87,0.3);
     ">
-<!-- arrow in -->
 <div style="
           position:absolute;left:-18px;top:50%;transform:translateY(-50%);
           width:20px;height:20px;z-index:10;
@@ -729,24 +749,11 @@ h3{font-size:1rem;font-weight:700;color:var(--bd);}
 <!-- ═══════════ NAV BUTTONS ═══════════ -->
 <div style="position:relative;z-index:10;display:flex;justify-content:space-between;
     width:100%;max-width:1300px;margin-top:14px;">
-<button onclick="showSlide('overview')" onmouseout="this.style.background='rgba(20,84,184,0.3)'" onmouseover="this.style.background='rgba(20,84,184,0.6)'" style="
-      padding:9px 20px;background:rgba(20,84,184,0.3);color:#93c5fd;
-      border:1px solid rgba(20,84,184,0.5);border-radius:8px;cursor:pointer;
-      font-size:13px;font-weight:600;transition:all 0.2s;
-  ">
-    ← Understanding
-  </button>
-<button onclick="showSlide('real-life')" onmouseout="this.style.background='rgba(20,84,184,0.3)'" onmouseover="this.style.background='rgba(20,84,184,0.6)'" style="
-      padding:9px 20px;background:rgba(20,84,184,0.3);color:#93c5fd;
-      border:1px solid rgba(20,84,184,0.5);border-radius:8px;cursor:pointer;
-      font-size:13px;font-weight:600;transition:all 0.2s;
-  ">
-    COE in Real Life →
-  </button>
+<a class="btn" href="#und" style="background:rgba(20,84,184,0.3);color:#93c5fd;border-color:rgba(20,84,184,0.5);">&#x2190; Understanding</a>
+<a class="btn btnp" href="#reallife">COE in Real Life &#x2192;</a>
 </div>
 <!-- ═══════════ STYLES ═══════════ -->
 <style>
-  /* ── Keyframes ── */
   @keyframes beltMove {
     from { background-position: 0 0; }
     to   { background-position: 40px 0; }
@@ -763,16 +770,12 @@ h3{font-size:1rem;font-weight:700;color:var(--bd);}
     0%,100% { box-shadow: 0 0 0 0 rgba(20,84,184,0.4); }
     50%      { box-shadow: 0 0 0 6px rgba(20,84,184,0); }
   }
-
-  /* ── Factory Station ── */
   .factory-station {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 4px;
   }
-
-  /* ── Flip Card ── */
   .flip-card {
     width: 100%;
     aspect-ratio: 3/4;
@@ -788,6 +791,9 @@ h3{font-size:1rem;font-weight:700;color:var(--bd);}
     border-radius: 10px;
   }
   .flip-card:hover .flip-inner {
+    transform: rotateY(180deg);
+  }
+  .flip-card.flipped .flip-inner {
     transform: rotateY(180deg);
   }
   .flip-front, .flip-back {
@@ -849,8 +855,6 @@ h3{font-size:1rem;font-weight:700;color:var(--bd);}
     color: #d1fae5;
     line-height: 1.4;
   }
-
-  /* ── Belt Badge ── */
   .belt-badge {
     background: linear-gradient(90deg, #1454B8, #0d9488);
     border-radius: 8px;
@@ -866,8 +870,11 @@ h3{font-size:1rem;font-weight:700;color:var(--bd);}
     overflow: hidden;
     text-overflow: ellipsis;
   }
+  .ff { background: linear-gradient(135deg,#0D9488 0%,#14B8A6 100%) !important; }
+  .fp-desc { font-size:.68rem; color:rgba(255,255,255,.88); line-height:1.45; margin-top:6px; }
 </style>
 </section>
+
 <section class="sl" data-label="COE in Real Life" id="reallife">
 <div class="cd">
 <span class="ey">Section 3 — COE in Action</span>
@@ -913,27 +920,140 @@ h3{font-size:1rem;font-weight:700;color:var(--bd);}
 </div>
 <a class="back-link" href="#reallife">&#x2190; Back</a>
 </div>
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:18px;">
-<div style="background:linear-gradient(135deg,rgba(13,148,136,.08),rgba(13,148,136,.03));border:2px solid rgba(13,148,136,.3);border-radius:16px;padding:16px 18px;">
-<div style="font-size:1.4rem;margin-bottom:7px;">🚀</div>
-<div style="font-size:.88rem;font-weight:800;color:#0D6B64;margin-bottom:6px;">Quality governed from sprint 1, not sprint-last</div>
-<div style="font-size:.78rem;color:var(--mu);line-height:1.6;">COE Test Manager reviews sprint evidence before stories close — no defect debt to SIT. Integration risks with DSP, UIMS, UWMS, and OneSAP surfaced weekly before they become blockers.</div>
-</div>
-<div style="background:linear-gradient(135deg,rgba(13,148,136,.08),rgba(13,148,136,.03));border:2px solid rgba(13,148,136,.3);border-radius:16px;padding:16px 18px;">
-<div style="font-size:1.4rem;margin-bottom:7px;">🏆</div>
-<div style="font-size:.88rem;font-weight:800;color:#0D6B64;margin-bottom:6px;">Consumer journeys proven end-to-end before launch</div>
-<div style="font-size:.78rem;color:var(--mu);line-height:1.6;">Golden scenario library covers checkout, loyalty earn/redeem, all payment types (PayNow, GrabPay, FairPrice wallet), and E2E cross-system (Light → DSP → UWMS → OneSAP). AI-augmented, tested on iOS, Android, and mobile web.</div>
-</div>
-<div style="background:linear-gradient(135deg,rgba(13,148,136,.08),rgba(13,148,136,.03));border:2px solid rgba(13,148,136,.3);border-radius:16px;padding:16px 18px;">
-<div style="font-size:1.4rem;margin-bottom:7px;">🔗</div>
-<div style="font-size:.88rem;font-weight:800;color:#0D6B64;margin-bottom:6px;">Integration complexity managed, not discovered in UAT</div>
-<div style="font-size:.78rem;color:var(--mu);line-height:1.6;">Light integrates with DSP, UIMS, UWMS, and OneSAP. Integration gaps caught before business testing begins. Migrated loyalty and product data validated in lower environments — not discovered broken in UAT.</div>
+<!-- ══ INTERACTIVE COUPON REDEMPTION JOURNEY ══ -->
+<div style="background:linear-gradient(135deg,#f0fdf4,#ecfdf5);border:2px solid #6ee7b7;border-radius:20px;padding:20px 24px;margin-bottom:18px;position:relative;overflow:hidden;">
+<div style="position:absolute;top:0;right:0;width:180px;height:180px;background:radial-gradient(circle,rgba(13,148,136,.08),transparent);pointer-events:none;"></div>
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+<div style="background:linear-gradient(135deg,#0d9488,#059669);border-radius:12px;padding:8px 14px;font-size:.8rem;font-weight:800;color:#fff;white-space:nowrap;">📱 Live Scenario</div>
+<div>
+<div style="font-size:.95rem;font-weight:800;color:#042f2e;">Coupon Redemption at Checkout — What a Great COE Ensures</div>
+<div style="font-size:.77rem;color:#0d6b64;margin-top:2px;">Customer applies a 20% loyalty coupon on the FairPrice app. Click each business process step to see what the COE validates.</div>
 </div>
 </div>
-<div class="p-block">
-<h4>📋 8 Quality Pillars — What a Great COE Delivers for Project Light</h4>
-<p style="font-size:.77rem;color:var(--mu);margin:6px 0 10px;line-height:1.65;">Each pillar traces from the COE Charter to a tangible outcome — chartered governance, standardised gates, golden scenarios covering all consumer journeys, and version-aligned environments across DSP, UWMS, and OneSAP. Click to expand.</p>
-<div class="acc acc-light" style="margin-top:6px;">
+
+<!-- ── GOVERNANCE LAYER (thin, clickable) ── -->
+<div onclick="ljLayerSelect('gov')" id="lj-gov-bar" style="background:rgba(20,84,184,.06);border:1.5px solid rgba(20,84,184,.2);border-radius:8px;padding:5px 14px;margin-bottom:8px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:all .2s;user-select:none;" onmouseover="this.style.background='rgba(20,84,184,.12)'" onmouseout="if(!this.classList.contains('lj-layer-active'))this.style.background='rgba(20,84,184,.06)'">
+<span style="font-size:.85rem;">🏛</span>
+<span style="font-size:.75rem;font-weight:800;color:#002F6C;">Governance Layer</span>
+<span style="font-size:.69rem;background:rgba(20,84,184,.12);color:#1454B8;padding:1px 7px;border-radius:999px;font-weight:700;">P1</span>
+<span style="font-size:.69rem;background:rgba(20,84,184,.12);color:#1454B8;padding:1px 7px;border-radius:999px;font-weight:700;">P2</span>
+<span style="font-size:.7rem;color:#94a3b8;margin-left:auto;">click to view ›</span>
+</div>
+
+<!-- Journey steps - business process only, no pillar tags -->
+<div style="display:flex;gap:0;align-items:stretch;flex-wrap:nowrap;overflow-x:auto;" id="light-journey">
+<div class="lj-step" onclick="ljSelect(0)" style="flex:1;min-width:100px;background:#fff;border:2px solid #0d9488;border-radius:12px 0 0 12px;padding:12px 10px;cursor:pointer;transition:all .2s;text-align:center;">
+<div style="font-size:1.4rem;margin-bottom:5px;">🔐</div>
+<div style="font-size:.77rem;font-weight:700;color:#042f2e;">Login &amp; App Load</div>
+</div>
+<div style="display:flex;align-items:center;padding:0 4px;color:#94a3b8;font-size:.8rem;flex-shrink:0;">›</div>
+<div class="lj-step" onclick="ljSelect(1)" style="flex:1;min-width:100px;background:#f0fdf4;border:2px solid #d1fae5;border-radius:0;padding:12px 10px;cursor:pointer;transition:all .2s;text-align:center;">
+<div style="font-size:1.4rem;margin-bottom:5px;">🛒</div>
+<div style="font-size:.77rem;font-weight:700;color:#042f2e;">Browse &amp; Add to Cart</div>
+</div>
+<div style="display:flex;align-items:center;padding:0 4px;color:#94a3b8;font-size:.8rem;flex-shrink:0;">›</div>
+<div class="lj-step" onclick="ljSelect(2)" style="flex:1;min-width:100px;background:#f0fdf4;border:2px solid #d1fae5;border-radius:0;padding:12px 10px;cursor:pointer;transition:all .2s;text-align:center;">
+<div style="font-size:1.4rem;margin-bottom:5px;">🎟️</div>
+<div style="font-size:.77rem;font-weight:700;color:#042f2e;">Apply Coupon Code</div>
+</div>
+<div style="display:flex;align-items:center;padding:0 4px;color:#94a3b8;font-size:.8rem;flex-shrink:0;">›</div>
+<div class="lj-step" onclick="ljSelect(3)" style="flex:1;min-width:100px;background:#f0fdf4;border:2px solid #d1fae5;border-radius:0;padding:12px 10px;cursor:pointer;transition:all .2s;text-align:center;">
+<div style="font-size:1.4rem;margin-bottom:5px;">💳</div>
+<div style="font-size:.77rem;font-weight:700;color:#042f2e;">Payment</div>
+</div>
+<div style="display:flex;align-items:center;padding:0 4px;color:#94a3b8;font-size:.8rem;flex-shrink:0;">›</div>
+<div class="lj-step" onclick="ljSelect(4)" style="flex:1;min-width:100px;background:#f0fdf4;border:2px solid #d1fae5;border-radius:0;padding:12px 10px;cursor:pointer;transition:all .2s;text-align:center;">
+<div style="font-size:1.4rem;margin-bottom:5px;">⭐</div>
+<div style="font-size:.77rem;font-weight:700;color:#042f2e;">Loyalty Points Earned</div>
+</div>
+<div style="display:flex;align-items:center;padding:0 4px;color:#94a3b8;font-size:.8rem;flex-shrink:0;">›</div>
+<div class="lj-step" onclick="ljSelect(5)" style="flex:1;min-width:100px;background:#f0fdf4;border:2px solid #d1fae5;border-radius:0 12px 12px 0;padding:12px 10px;cursor:pointer;transition:all .2s;text-align:center;">
+<div style="font-size:1.4rem;margin-bottom:5px;">📦</div>
+<div style="font-size:.77rem;font-weight:700;color:#042f2e;">Order &amp; Fulfilment</div>
+</div>
+</div>
+
+<!-- ── METRICS LAYER (thin, clickable) ── -->
+<div onclick="ljLayerSelect('met')" id="lj-met-bar" style="background:rgba(13,148,136,.05);border:1.5px solid rgba(13,148,136,.2);border-radius:8px;padding:5px 14px;margin-top:8px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:all .2s;user-select:none;" onmouseover="this.style.background='rgba(13,148,136,.11)'" onmouseout="if(!this.classList.contains('lj-layer-active'))this.style.background='rgba(13,148,136,.05)'">
+<span style="font-size:.85rem;">📊</span>
+<span style="font-size:.75rem;font-weight:800;color:#042f2e;">Metrics Layer</span>
+<span style="font-size:.69rem;background:rgba(13,148,136,.12);color:#0d9488;padding:1px 7px;border-radius:999px;font-weight:700;">P8</span>
+<span style="font-size:.7rem;color:#94a3b8;margin-left:auto;">click to view ›</span>
+</div>
+<!-- Detail panel -->
+<div id="lj-detail" style="margin-top:12px;background:#fff;border-radius:14px;border:1.5px solid #a7f3d0;padding:14px 18px;min-height:80px;transition:all .3s;">
+<div style="font-size:.82rem;font-weight:700;color:#042f2e;margin-bottom:6px;" id="lj-title">👆 Click a journey step or layer above to see what the COE validates</div>
+<div style="font-size:.78rem;color:#475569;line-height:1.65;" id="lj-body"></div>
+<div id="lj-pillars" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;"></div>
+</div>
+<style>
+.lj-step.active{background:#0d9488 !important;border-color:#0d9488 !important;}
+.lj-step.active div{color:#fff !important;}
+</style>
+<script>
+var ljData=[
+{title:"🔐 Login &amp; App Load — Authentication &amp; Session",body:"Golden scenario (P5): OTP login, biometric fallback, and session token — run on iOS latest/N-1, Android latest/N-1, and mobile web. DSP customer record loads correctly for the logged-in user. Test data (P7): real customer profiles used in SIT, not synthetic stubs.",pillars:["P5: Golden — login on all device platforms","P3: Coverage — functional + API","P7: Real customer data in SIT"]},
+{title:"🛒 Browse &amp; Add to Cart — OneSAP Price Validated",body:"Golden scenario (P5): scanned SKU returns correct price from OneSAP; DSP promo pricing (buy-2-get-1, member price) applied at line level. Test data (P7): production-derived SKU catalogue and active promo configs — not synthetic data that always passes. Environment (P6): Light + OneSAP versions aligned before SIT window opens.",pillars:["P5: Golden — price + promo at cart","P7: Prod-derived SKU + promo config","P6: Env aligned — no OneSAP overwrite"]},
+{title:"🎟️ Apply Coupon Code — DSP Promo Engine Validated",body:"Golden scenario (P5): 'FPGSAVE20' triggers DSP promo engine — 20% discount applied to eligible items, cart total updated correctly. Test data (P7): active DSP promo configs from production — not generic codes. Environment (P6): UAT uses real DSP endpoint, no stubs; version-aligned before window opens.",pillars:["P5: Golden — coupon end-to-end","P7: Active DSP promo config in SIT","P6: UAT — real DSP endpoint, no stubs"]},
+{title:"💳 Payment — PayNow QR / GrabPay / NETS Validated",body:"Golden scenario (P5): all payment types — PayNow QR, GrabPay, NETS, multi-tender, declined card, timeout — in the golden set. Coverage (P3): security assessment (OWASP, PCI DSS) and payment tokenisation evidence compiled before go-live. Tooling (P4): regression automation on payment flows; test execution tracked in unified dashboard.",pillars:["P5: Golden — every payment type + failure path","P3: Security + coverage scope","P4: Automation on payment regression"]},
+{title:"⭐ Loyalty Points Earned — DSP Balance Updated",body:"Golden scenario (P5): purchase triggers DSP loyalty earn event — points credited within agreed sync window, balance updated in-app. Test data (P7): migrated loyalty balances used in SIT — corrupted balances caught before UAT, not by a consumer. Coverage (P3): API integration between Light ↔ DSP validated end-to-end.",pillars:["P5: Golden — loyalty earn end-to-end","P7: Migrated loyalty data validated pre-SIT","P3: API integration coverage"]},
+{title:"📦 Order Confirmed — UWMS Fulfilment Triggered",body:"Golden scenario (P5): order confirmation triggers UWMS fulfilment event; delivery status updates in-app within agreed window. E2E scenario: Light → DSP → UWMS → OneSAP — all in the golden set. Environment (P6): UWMS version in UAT matches Pre-Prod; Pre-Prod is the final shakeout gate before go-live with COE endorsement.",pillars:["P5: Golden — E2E cross-system","P6: UWMS env aligned with Light","P3: Integration E2E coverage"]}
+];
+var ljLayerData={
+  gov:{title:"🏛 Governance Layer — P1 &amp; P2",body:"P1 — COE Charter: Sprint gates active; no story closes without test evidence. Go-live requires COE quality endorsement + FPG D&T sign-off + Business Owner UAT acceptance — no vendor self-certification. P2 — Standards: SIT/UAT entry-exit criteria enforced across all vendors; P1 = consumer-impacting (checkout failure, loyalty earn break, payment error) — vendors cannot self-downgrade severity.",pillars:["P1: COE Charter — clear quality ownership","P2: Phase gates — consistent across vendors"]},
+  met:{title:"📊 Metrics Layer — P8",body:"P8 — Dashboard: Daily defect view for test team (open P1/P2, blocked cases, environment status). Weekly RAG to programme leadership. Go-live gate requires objective evidence: zero P1, Pre-Prod golden set passed, UAT signed-off, security evidence compiled — not vendor verbal confidence. Escape tracking: any defect reaching production is tracked sprint-to-sprint; upward trend triggers tighter entry criteria on the next release.",pillars:["P8: Live dashboard — daily + weekly views","P8: Go-live gate — evidence-based"]}
+};
+function ljClearLayers(){
+  var gb=document.getElementById("lj-gov-bar");
+  var mb=document.getElementById("lj-met-bar");
+  if(gb){gb.classList.remove("lj-layer-active");gb.style.background="rgba(20,84,184,.06)";}
+  if(mb){mb.classList.remove("lj-layer-active");mb.style.background="rgba(13,148,136,.05)";}
+}
+function ljLayerSelect(layer){
+  document.querySelectorAll(".lj-step").forEach(function(s){s.classList.remove("active");});
+  ljClearLayers();
+  var bar=document.getElementById("lj-"+layer+"-bar");
+  if(bar){bar.classList.add("lj-layer-active");bar.style.background=layer==="gov"?"rgba(20,84,184,.16)":"rgba(13,148,136,.14)";}
+  var d=ljLayerData[layer];
+  document.getElementById("lj-title").innerHTML=d.title;
+  document.getElementById("lj-body").textContent=d.body;
+  var pp=document.getElementById("lj-pillars");pp.innerHTML="";
+  d.pillars.forEach(function(p){
+    var s=document.createElement("span");
+    s.style.cssText="background:rgba(20,84,184,.1);border:1px solid rgba(20,84,184,.25);border-radius:999px;padding:3px 10px;font-size:.69rem;font-weight:700;color:#1454B8;";
+    s.textContent=p;pp.appendChild(s);
+  });
+}
+function ljSelect(i){
+  ljClearLayers();
+  var steps=document.querySelectorAll(".lj-step");
+  steps.forEach(function(s,idx){s.classList.toggle("active",idx===i)});
+  var d=ljData[i];
+  document.getElementById("lj-title").innerHTML=d.title;
+  document.getElementById("lj-body").textContent=d.body;
+  var pp=document.getElementById("lj-pillars");
+  pp.innerHTML="";
+  d.pillars.forEach(function(p){
+    var s=document.createElement("span");
+    s.style.cssText="background:rgba(13,148,136,.1);border:1px solid rgba(13,148,136,.3);border-radius:999px;padding:3px 10px;font-size:.69rem;font-weight:700;color:#0d6b64;";
+    s.textContent=p;pp.appendChild(s);
+  });
+}
+</script>
+</div>
+
+<div class="p-block" style="padding:0;background:transparent;border:none;">
+<!-- Collapsible wrapper -->
+<div onclick="toggleSide('light-pillars')" style="display:flex;align-items:center;gap:10px;padding:13px 17px;cursor:pointer;background:#F8FAFF;border:1.5px solid var(--br);border-radius:14px;user-select:none;transition:background .15s;margin-bottom:4px;" onmouseover="this.style.background='#EFF4FF'" onmouseout="this.style.background='#F8FAFF'" id="light-pillars-hd">
+<span style="font-size:1rem;">📋</span>
+<span style="font-size:.88rem;font-weight:700;color:var(--bd);flex:1;">8 Quality Pillars — What a Great COE Delivers for Project Light</span>
+<span style="font-size:.72rem;color:var(--so);">Click to expand</span>
+<span id="light-pillars-arr" style="font-size:.68rem;color:var(--bl);background:rgba(20,84,184,.1);padding:3px 7px;border-radius:7px;transition:transform .3s;">▼</span>
+</div>
+<div id="light-pillars" style="max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.4,0,.2,1);">
+<div style="padding:4px 0 0;">
+<p style="font-size:.77rem;color:var(--mu);margin:0 0 10px;line-height:1.65;padding:0 4px;">Each pillar traces from the COE Charter to a tangible outcome — chartered governance, standardised gates, golden scenarios covering all consumer journeys, and version-aligned environments across DSP, UWMS, and OneSAP. Click any pillar to expand.</p>
+<div class="acc acc-light" style="margin-top:4px;">
 <div class="acc-item">
 <div class="acc-hd" onclick="toggleAcc(this)"><span class="acc-num">P1</span><span class="acc-ico">🏛</span><span class="acc-title">Governance — COE Charter from sprint 1; no go-live on vendor self-certification</span><span class="acc-arr">▼</span></div>
 <div class="acc-body"><div class="acc-inner">
@@ -1026,6 +1146,8 @@ h3{font-size:1rem;font-weight:700;color:var(--bd);}
 </div>
 </div>
 </div>
+</div>
+</div>
 <div class="na">
 <a class="btn" href="#achieve-turbo">← iPOS</a>
 <a class="btn btnp" href="#mob">How We Get There →</a>
@@ -1044,27 +1166,138 @@ h3{font-size:1rem;font-weight:700;color:var(--bd);}
 </div>
 <a class="back-link" href="#reallife">&#x2190; Back</a>
 </div>
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:18px;">
-<div style="background:linear-gradient(135deg,rgba(14,165,163,.08),rgba(14,165,163,.03));border:2px solid rgba(14,165,163,.3);border-radius:16px;padding:16px 18px;">
-<div style="font-size:1.4rem;margin-bottom:7px;">🛡️</div>
-<div style="font-size:.88rem;font-weight:800;color:#0F766E;margin-bottom:6px;">Zero P1 defects reach stores</div>
-<div style="font-size:.78rem;color:var(--mu);line-height:1.6;">Every release runs the applicable golden scenario subset before any store deployment. Go-decisions on objective evidence — not vendor verbal readiness. GCP failover and DR tested before each deployment.</div>
-</div>
-<div style="background:linear-gradient(135deg,rgba(14,165,163,.08),rgba(14,165,163,.03));border:2px solid rgba(14,165,163,.3);border-radius:16px;padding:16px 18px;">
-<div style="font-size:1.4rem;margin-bottom:7px;">🔗</div>
-<div style="font-size:.88rem;font-weight:800;color:#0F766E;margin-bottom:6px;">Integration breaks caught before rollout</div>
-<div style="font-size:.78rem;color:var(--mu);line-height:1.6;">DSP promo changes, OneSAP price updates, and Release 4 coupon engine validated against iPOS before store deployment. COE environment matrix manages Release 2/3/4 in parallel — no version contamination.</div>
-</div>
-<div style="background:linear-gradient(135deg,rgba(14,165,163,.08),rgba(14,165,163,.03));border:2px solid rgba(14,165,163,.3);border-radius:16px;padding:16px 18px;">
-<div style="font-size:1.4rem;margin-bottom:7px;">⚡</div>
-<div style="font-size:.88rem;font-weight:800;color:#0F766E;margin-bottom:6px;">Store operations protected at scale</div>
-<div style="font-size:.78rem;color:var(--mu);line-height:1.6;">Offline mode, all payment types (Cash, Card, NETS, PayNow, GrabPay), and GCP failover validated per deployment. Peak load at 160-store scale tested. Security items closed before mass rollout.</div>
+<!-- ══ INTERACTIVE STORE CHECKOUT JOURNEY ══ -->
+<div style="background:linear-gradient(135deg,#f0fdf4,#ecfdf5);border:2px solid #6ee7b7;border-radius:20px;padding:20px 24px;margin-bottom:18px;position:relative;overflow:hidden;">
+<div style="position:absolute;top:0;right:0;width:180px;height:180px;background:radial-gradient(circle,rgba(13,148,136,.08),transparent);pointer-events:none;"></div>
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+<div style="background:linear-gradient(135deg,#0d9488,#059669);border-radius:12px;padding:8px 14px;font-size:.8rem;font-weight:800;color:#fff;white-space:nowrap;">💳 Live Scenario</div>
+<div>
+<div style="font-size:.95rem;font-weight:800;color:#042f2e;">Shopping Cart Checkout at FairPrice Store — What a Great COE Ensures</div>
+<div style="font-size:.77rem;color:#0d6b64;margin-top:2px;">Customer completes a $47.80 shop with NETS, GrabPay loyalty earn, and offline mode resilience. Click each step.</div>
 </div>
 </div>
-<div class="p-block">
-<h4>📋 8 Quality Pillars — What a Great COE Delivers for iPOS (Project Turbo)</h4>
-<p style="font-size:.77rem;color:var(--mu);margin:6px 0 10px;line-height:1.65;">Each pillar traces from the COE Charter to a tangible outcome for iPOS — from chartered governance through standardised gates, golden scenarios, environment alignment, and objective quality evidence. Click to expand.</p>
-<div class="acc acc-turbo" style="margin-top:6px;">
+<!-- ── GOVERNANCE LAYER (thin, clickable) ── -->
+<div onclick="ijLayerSelect('gov')" id="ij-gov-bar" style="background:rgba(20,84,184,.06);border:1.5px solid rgba(20,84,184,.2);border-radius:8px;padding:5px 14px;margin-bottom:8px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:all .2s;user-select:none;" onmouseover="this.style.background='rgba(20,84,184,.12)'" onmouseout="if(!this.classList.contains('ij-layer-active'))this.style.background='rgba(20,84,184,.06)'">
+<span style="font-size:.85rem;">🏛</span>
+<span style="font-size:.75rem;font-weight:800;color:#002F6C;">Governance Layer</span>
+<span style="font-size:.69rem;background:rgba(20,84,184,.12);color:#1454B8;padding:1px 7px;border-radius:999px;font-weight:700;">P1</span>
+<span style="font-size:.69rem;background:rgba(20,84,184,.12);color:#1454B8;padding:1px 7px;border-radius:999px;font-weight:700;">P2</span>
+<span style="font-size:.7rem;color:#94a3b8;margin-left:auto;">click to view ›</span>
+</div>
+
+<!-- Journey steps - business process only -->
+<div style="display:flex;gap:0;align-items:stretch;flex-wrap:nowrap;overflow-x:auto;" id="ipos-journey">
+<div class="ij-step" onclick="ijSelect(0)" style="flex:1;min-width:90px;background:#fff;border:2px solid #0d9488;border-radius:12px 0 0 12px;padding:12px 8px;cursor:pointer;transition:all .2s;text-align:center;">
+<div style="font-size:1.3rem;margin-bottom:4px;">🏪</div>
+<div style="font-size:.75rem;font-weight:700;color:#042f2e;">Cashier Opens iPOS</div>
+</div>
+<div style="display:flex;align-items:center;padding:0 3px;color:#94a3b8;font-size:.8rem;flex-shrink:0;">›</div>
+<div class="ij-step" onclick="ijSelect(1)" style="flex:1;min-width:90px;background:#f0fdf4;border:2px solid #d1fae5;border-radius:0;padding:12px 8px;cursor:pointer;transition:all .2s;text-align:center;">
+<div style="font-size:1.3rem;margin-bottom:4px;">🛒</div>
+<div style="font-size:.75rem;font-weight:700;color:#042f2e;">Scan Items</div>
+</div>
+<div style="display:flex;align-items:center;padding:0 3px;color:#94a3b8;font-size:.8rem;flex-shrink:0;">›</div>
+<div class="ij-step" onclick="ijSelect(2)" style="flex:1;min-width:90px;background:#f0fdf4;border:2px solid #d1fae5;border-radius:0;padding:12px 8px;cursor:pointer;transition:all .2s;text-align:center;">
+<div style="font-size:1.3rem;margin-bottom:4px;">📶</div>
+<div style="font-size:.75rem;font-weight:700;color:#042f2e;">Network Drops (Offline)</div>
+</div>
+<div style="display:flex;align-items:center;padding:0 3px;color:#94a3b8;font-size:.8rem;flex-shrink:0;">›</div>
+<div class="ij-step" onclick="ijSelect(3)" style="flex:1;min-width:90px;background:#f0fdf4;border:2px solid #d1fae5;border-radius:0;padding:12px 8px;cursor:pointer;transition:all .2s;text-align:center;">
+<div style="font-size:1.3rem;margin-bottom:4px;">💴</div>
+<div style="font-size:.75rem;font-weight:700;color:#042f2e;">NETS + GrabPay Payment</div>
+</div>
+<div style="display:flex;align-items:center;padding:0 3px;color:#94a3b8;font-size:.8rem;flex-shrink:0;">›</div>
+<div class="ij-step" onclick="ijSelect(4)" style="flex:1;min-width:90px;background:#f0fdf4;border:2px solid #d1fae5;border-radius:0;padding:12px 8px;cursor:pointer;transition:all .2s;text-align:center;">
+<div style="font-size:1.3rem;margin-bottom:4px;">⭐</div>
+<div style="font-size:.75rem;font-weight:700;color:#042f2e;">Loyalty Earn (GrabPay)</div>
+</div>
+<div style="display:flex;align-items:center;padding:0 3px;color:#94a3b8;font-size:.8rem;flex-shrink:0;">›</div>
+<div class="ij-step" onclick="ijSelect(5)" style="flex:1;min-width:90px;background:#f0fdf4;border:2px solid #d1fae5;border-radius:0 12px 12px 0;padding:12px 8px;cursor:pointer;transition:all .2s;text-align:center;">
+<div style="font-size:1.3rem;margin-bottom:4px;">🖨️</div>
+<div style="font-size:.75rem;font-weight:700;color:#042f2e;">Receipt &amp; Z-Report</div>
+</div>
+</div>
+
+<!-- ── METRICS LAYER (thin, clickable) ── -->
+<div onclick="ijLayerSelect('met')" id="ij-met-bar" style="background:rgba(13,148,136,.05);border:1.5px solid rgba(13,148,136,.2);border-radius:8px;padding:5px 14px;margin-top:8px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:all .2s;user-select:none;" onmouseover="this.style.background='rgba(13,148,136,.11)'" onmouseout="if(!this.classList.contains('ij-layer-active'))this.style.background='rgba(13,148,136,.05)'">
+<span style="font-size:.85rem;">📊</span>
+<span style="font-size:.75rem;font-weight:800;color:#042f2e;">Metrics Layer</span>
+<span style="font-size:.69rem;background:rgba(13,148,136,.12);color:#0d9488;padding:1px 7px;border-radius:999px;font-weight:700;">P8</span>
+<span style="font-size:.7rem;color:#94a3b8;margin-left:auto;">click to view ›</span>
+</div>
+<!-- Detail panel -->
+<div id="ij-detail" style="margin-top:12px;background:#fff;border-radius:14px;border:1.5px solid #a7f3d0;padding:14px 18px;min-height:80px;transition:all .3s;">
+<div style="font-size:.82rem;font-weight:700;color:#042f2e;margin-bottom:6px;" id="ij-title">👆 Click a checkout step or layer above to see what the COE validates</div>
+<div style="font-size:.78rem;color:#475569;line-height:1.65;" id="ij-body"></div>
+<div id="ij-pillars" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;"></div>
+</div>
+<style>
+.ij-step.active{background:#0d9488 !important;border-color:#0d9488 !important;}
+.ij-step.active div{color:#fff !important;}
+</style>
+<script>
+var ijData=[
+{title:"🏪 Cashier Opens iPOS — Start-of-Day",body:"Golden scenario (P5): Start-of-day sequence — iPOS boots, connects to DSP and OneSAP, loads current price tables and active promotions — completes within agreed SLA. Test data (P7): production-derived promo and price data loaded, not yesterday's. Tooling (P4): store connectivity status visible in COE dashboard before stores open.",pillars:["P5: Golden — start-of-day sequence","P7: Prod-derived price + promo tables","P4: Dashboard — store status live"]},
+{title:"🛒 Scan Items — OneSAP Price + DSP Promo Validated",body:"Golden scenario (P5): each scanned SKU returns correct price from OneSAP; DSP promotions (buy-2-get-1, member price) applied at line level. Test data (P7): production-derived SKU catalogue and active promo configs in SIT — not synthetic data that always passes. Environment (P6): OneSAP + DSP versions aligned before SIT window; no mid-cycle overwrites.",pillars:["P5: Golden — scan + promo line-level","P7: Prod-derived SKU + DSP promo in SIT","P6: Env aligned — OneSAP + DSP matched"]},
+{title:"📶 Network Drops — Offline Mode Activated",body:"Golden scenario (P5): mandatory — network drops mid-transaction, iPOS continues in offline mode; local queue captures sale; on restore, transaction syncs without data loss. No deployment proceeds without offline mode evidence. Coverage (P3): GCP failover DR tested before each deployment; RTO agreed with business. Environment (P6): DR tested in Pre-Prod production-equivalent environment.",pillars:["P5: Golden — offline mode mandatory","P3: Coverage — DR is a release gate","P6: Pre-Prod — DR in prod-equivalent env"]},
+{title:"💴 NETS + GrabPay Payment — Multi-Tender Validated",body:"Golden scenario (P5): NETS terminal succeeds; remaining split to GrabPay QR — multi-tender recorded correctly. All failure paths (declined NETS, GrabPay timeout) in golden set. Coverage (P3): security assessment (PCI DSS, payment tokenisation) and OWASP evidence compiled before go-live gate. Tooling (P4): payment regression automated; runs on every applicable release.",pillars:["P5: Golden — all payment types + failures","P3: Coverage — security + all tender types","P4: Automation on payment regression"]},
+{title:"⭐ Loyalty Earn (GrabPay) — DSP Credited",body:"Golden scenario (P5): GrabPay transaction triggers DSP loyalty earn — points credited within agreed sync window. Test data (P7): real loyalty data (not sanitised) used in SIT; production-derived promo configs ensure earn calculation matches real DSP behaviour. Coverage (P3): DSP API integration validated end-to-end across the golden set.",pillars:["P5: Golden — loyalty earn end-to-end","P7: Real DSP loyalty + promo data in SIT","P3: DSP API integration coverage"]},
+{title:"🖨️ Receipt + Z-Report — End-of-Day Reconciliation",body:"Golden scenario (P5): receipt prints with all items, discounts, and tender types. Z-report balances total sales — cash, NETS, GrabPay — a mismatch is P1. Tooling (P4): Z-report result fed into COE dashboard; programme leadership sees go-live evidence package before any Wave approval is granted.",pillars:["P5: Golden — Z-report reconciliation","P4: Dashboard — go-live evidence package","P3: Coverage — end-of-day in scope"]}
+];
+var ijLayerData={
+  gov:{title:"🏛 Governance Layer — P1 &amp; P2",body:"P1 — COE Charter: Every deployment requires COE quality endorsement — no store goes live on vendor verbal sign-off. BAU changes assessed by COE before deployment. P2 — Standards: Uniform defect taxonomy across all iPOS vendors; P1 = store-impacting, escalated within 4 hours regardless of workstream. SIT/UAT exit criteria enforced; deployment cannot proceed without COE gate passage.",pillars:["P1: COE Charter — deployment endorsed","P2: Uniform defect taxonomy — 4hr P1 SLA"]},
+  met:{title:"📊 Metrics Layer — P8",body:"P8 — Deployment gate: Zero P1 open, golden set passed, DR tested, security items closed — evidence package presented to programme leadership before any Wave approval is granted. Not verbal vendor readiness. Continuous improvement: production defect rate tracked post-deployment; escape rate trends feed into next release's golden set refinement and test strategy updates.",pillars:["P8: Evidence-based deployment gate","P8: Escape tracking → continuous improvement"]}
+};
+function ijClearLayers(){
+  var gb=document.getElementById("ij-gov-bar");
+  var mb=document.getElementById("ij-met-bar");
+  if(gb){gb.classList.remove("ij-layer-active");gb.style.background="rgba(20,84,184,.06)";}
+  if(mb){mb.classList.remove("ij-layer-active");mb.style.background="rgba(13,148,136,.05)";}
+}
+function ijLayerSelect(layer){
+  document.querySelectorAll(".ij-step").forEach(function(s){s.classList.remove("active");});
+  ijClearLayers();
+  var bar=document.getElementById("ij-"+layer+"-bar");
+  if(bar){bar.classList.add("ij-layer-active");bar.style.background=layer==="gov"?"rgba(20,84,184,.16)":"rgba(13,148,136,.14)";}
+  var d=ijLayerData[layer];
+  document.getElementById("ij-title").innerHTML=d.title;
+  document.getElementById("ij-body").textContent=d.body;
+  var pp=document.getElementById("ij-pillars");pp.innerHTML="";
+  d.pillars.forEach(function(p){
+    var s=document.createElement("span");
+    s.style.cssText="background:rgba(20,84,184,.1);border:1px solid rgba(20,84,184,.25);border-radius:999px;padding:3px 10px;font-size:.69rem;font-weight:700;color:#1454B8;";
+    s.textContent=p;pp.appendChild(s);
+  });
+}
+function ijSelect(i){
+  ijClearLayers();
+  var steps=document.querySelectorAll(".ij-step");
+  steps.forEach(function(s,idx){s.classList.toggle("active",idx===i)});
+  var d=ijData[i];
+  document.getElementById("ij-title").innerHTML=d.title;
+  document.getElementById("ij-body").textContent=d.body;
+  var pp=document.getElementById("ij-pillars");
+  pp.innerHTML="";
+  d.pillars.forEach(function(p){
+    var s=document.createElement("span");
+    s.style.cssText="background:rgba(13,148,136,.1);border:1px solid rgba(13,148,136,.3);border-radius:999px;padding:3px 10px;font-size:.69rem;font-weight:700;color:#0d6b64;";
+    s.textContent=p;pp.appendChild(s);
+  });
+}
+</script>
+</div>
+
+<div class="p-block" style="padding:0;background:transparent;border:none;">
+<div onclick="toggleSide('ipos-pillars')" style="display:flex;align-items:center;gap:10px;padding:13px 17px;cursor:pointer;background:#FFF7ED;border:1.5px solid #FDE68A;border-radius:14px;user-select:none;transition:background .15s;margin-bottom:4px;" onmouseover="this.style.background='#FEF3C7'" onmouseout="this.style.background='#FFF7ED'" id="ipos-pillars-hd">
+<span style="font-size:1rem;">📋</span>
+<span style="font-size:.88rem;font-weight:700;color:#042f2e;flex:1;">8 Quality Pillars — What a Great COE Delivers for iPOS (Project Turbo)</span>
+<span style="font-size:.72rem;color:#0d6b64;">Click to expand</span>
+<span id="ipos-pillars-arr" style="font-size:.68rem;color:#D97706;background:rgba(217,119,6,.12);padding:3px 7px;border-radius:7px;transition:transform .3s;">▼</span>
+</div>
+<div id="ipos-pillars" style="max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.4,0,.2,1);">
+<div style="padding:4px 0 0;">
+<p style="font-size:.77rem;color:var(--mu);margin:0 0 10px;line-height:1.65;padding:0 4px;">Each pillar traces from the COE Charter to a tangible outcome for iPOS — chartered governance, standardised gates, golden scenarios, environment alignment, and objective quality evidence. Click any pillar to expand.</p>
+<div class="acc acc-turbo" style="margin-top:4px;">
 <div class="acc-item">
 <div class="acc-hd" onclick="toggleAcc(this)"><span class="acc-num">P1</span><span class="acc-ico">🏛</span><span class="acc-title">Governance — COE Charter establishes quality ownership; no deployment approved on verbal confidence</span><span class="acc-arr">▼</span></div>
 <div class="acc-body"><div class="acc-inner">
@@ -1157,6 +1390,8 @@ h3{font-size:1rem;font-weight:700;color:var(--bd);}
 </div>
 </div>
 </div>
+</div>
+</div>
 <div class="na">
 <a class="btn" href="#reallife">← COE in Action</a>
 <a class="btn btnp" href="#achieve-light">Project Light →</a>
@@ -1167,19 +1402,19 @@ h3{font-size:1rem;font-weight:700;color:var(--bd);}
 <div class="cd">
 <span class="ey">Section 4 — How We Get There</span>
 <h1>From Design to Operation — 8 Weeks</h1>
-<p class="lead">The COE activates in parallel with FPG's ongoing delivery. No pause, no big-bang design phase. Standards, golden scenarios, tooling, and quality visibility are operational before the next release wave.</p>
+<p class="lead">Eight weeks from engagement to fully operational quality governance — standards, golden scenarios, tooling, and visibility active before the next release.</p>
 <div class="ms-g">
 <div class="ms">
 <div class="ms-n">1</div>
 <div class="ms-t">Wk 1 — Engage</div>
-<div class="ms-d">COE ways of working established. All 9 initiative teams and SI vendors engaged. Active initiatives and current test artefacts reviewed. COE governance cadence introduced.</div>
+<div class="ms-d">COE ways of working established. All 9 initiative teams and SI vendors engaged. Active initiatives and current test artefacts — start reviewing. COE governance cadence introduced.</div>
 <div style="margin-top:9px;"><span class="tg tg-b">Engaged</span><span class="tg tg-g">Reviewing</span></div>
 </div>
 <div class="ms">
 <div class="ms-n">2</div>
 <div class="ms-t">Wk 2–3 — Anchor</div>
-<div class="ms-d">All 9 initiatives assessed against COE standards. Vendors onboarded to standardised toolset. Environment inventory and version matrix established. Quality governance model agreed with programme leadership.</div>
-<div style="margin-top:9px;"><span class="tg tg-b">Standards set</span><span class="tg tg-g">Tooling live</span></div>
+<div class="ms-d">All 9 initiatives assessed against COE standards. Environment inventory and version matrix established. Start identifying golden set of test scenarios with initiative owners.</div>
+<div style="margin-top:9px;"><span class="tg tg-b">Standards set</span><span class="tg tg-p">Golden set scoping</span></div>
 </div>
 <div class="ms">
 <div class="ms-n">3</div>
@@ -1190,7 +1425,7 @@ h3{font-size:1rem;font-weight:700;color:var(--bd);}
 <div class="ms">
 <div class="ms-n">4</div>
 <div class="ms-t">Wk 7–8 — Operate</div>
-<div class="ms-d">COE governance operational across all initiatives. Automation coverage growing. Quality dashboard live for programme leadership. First iPOS deployment governed end-to-end. Continuous improvement loop active.</div>
+<div class="ms-d">COE governance operational across all initiatives. Automation coverage growing. Quality dashboard live for programme leadership. Continuous improvement loop active.</div>
 <div style="margin-top:9px;"><span class="tg tg-g">Fully operational</span><span class="tg tg-o">Dashboard live</span></div>
 </div>
 </div>
